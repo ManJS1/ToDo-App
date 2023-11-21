@@ -1,0 +1,29 @@
+<%- include("header") -%> 
+
+    <!-- <% if (listTitle === "saturday" || listTitle === "sunday"){%>
+        <h1 style="color: palegreen;"><%= listTitle%></h1>
+    <%}else{%>
+        <h1 style="color: purple;"><%= listTitle %></h1>
+    <%}%> to use javaScript inside ejs tamplate -->
+    <div class="box" id="heading">
+        <h1><%= listTitle%></h1>
+    </div>
+    
+
+    <div class="box">
+        <% for(var i=0;i<newListItems.length;i++){ %>
+            <div class="item">
+                <input type="checkbox">
+                <p><%= newListItems[i] %></p>
+            </div>
+            
+        <%}%>
+        <form action="/" method="post">
+            <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+            <button type="submit" name="list" value=<%= listTitle %>>+</button>
+        </form>
+    </div>
+        
+<%- include("footer") -%> 
+<!-- to include another ejs file -->
+
